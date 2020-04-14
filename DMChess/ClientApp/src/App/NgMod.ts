@@ -4,15 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
-import { AppComponent } from './app.component';
-import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
+import { Root } from './Root/Root';
+import { NavMenuComponent } from './Default/nav-menu/nav-menu.component';
+import { HomeComponent } from './Default/home/home.component';
+import { CounterComponent } from './Default/counter/counter.component';
+import { FetchDataComponent } from './Default/fetch-data/fetch-data.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    Root,
     NavMenuComponent,
     HomeComponent,
     CounterComponent,
@@ -29,6 +29,6 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
     ])
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [Root]
 })
-export class AppModule { }
+export class NgMod { }
