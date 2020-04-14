@@ -9,3 +9,14 @@ C:\Repos\DMChess\DMChess_Srv\obj\Release\netcoreapp3.1\DMChess_Srv.AssemblyInfo.
 C:\Repos\DMChess\DMChess_Srv\obj\Release\netcoreapp3.1\DMChess_Srv.dll
 C:\Repos\DMChess\DMChess_Srv\obj\Release\netcoreapp3.1\DMChess_Srv.pdb
 C:\Repos\DMChess\DMChess_Srv\obj\Release\netcoreapp3.1\DMChess_Srv.genruntimeconfig.cache
+C:\Repos\DMChess_3_1\DMChess_Srv\bin\Release\netcoreapp3.1\DMChess_Srv.deps.json
+C:\Repos\DMChess_3_1\DMChess_Srv\bin\Release\netcoreapp3.1\DMChess_Srv.runtimeconfig.json
+C:\Repos\DMChess_3_1\DMChess_Srv\bin\Release\netcoreapp3.1\DMChess_Srv.runtimeconfig.dev.json
+C:\Repos\DMChess_3_1\DMChess_Srv\bin\Release\netcoreapp3.1\DMChess_Srv.dll
+C:\Repos\DMChess_3_1\DMChess_Srv\bin\Release\netcoreapp3.1\DMChess_Srv.pdb
+C:\Repos\DMChess_3_1\DMChess_Srv\obj\Release\netcoreapp3.1\DMChess_Srv.csprojAssemblyReference.cache
+C:\Repos\DMChess_3_1\DMChess_Srv\obj\Release\netcoreapp3.1\DMChess_Srv.AssemblyInfoInputs.cache
+C:\Repos\DMChess_3_1\DMChess_Srv\obj\Release\netcoreapp3.1\DMChess_Srv.AssemblyInfo.cs
+C:\Repos\DMChess_3_1\DMChess_Srv\obj\Release\netcoreapp3.1\DMChess_Srv.dll
+C:\Repos\DMChess_3_1\DMChess_Srv\obj\Release\netcoreapp3.1\DMChess_Srv.pdb
+C:\Repos\DMChess_3_1\DMChess_Srv\obj\Release\netcoreapp3.1\DMChess_Srv.genruntimeconfig.cache
