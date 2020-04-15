@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Repos\\DMChess_3_1\\DMChess_Srv\\DMChess_Srv.csproj": {}
+    "C:\\Repos\\DMChess\\DMChess_Srv\\DMChess_Srv.csproj": {}
   },
   "projects": {
-    "C:\\Repos\\DMChess_3_1\\DMChess_Srv\\DMChess_Srv.csproj": {
+    "C:\\Repos\\DMChess\\DMChess_Srv\\DMChess_Srv.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Repos\\DMChess_3_1\\DMChess_Srv\\DMChess_Srv.csproj",
+        "projectUniqueName": "C:\\Repos\\DMChess\\DMChess_Srv\\DMChess_Srv.csproj",
         "projectName": "DMChess_Srv",
-        "projectPath": "C:\\Repos\\DMChess_3_1\\DMChess_Srv\\DMChess_Srv.csproj",
+        "projectPath": "C:\\Repos\\DMChess\\DMChess_Srv\\DMChess_Srv.csproj",
         "packagesPath": "C:\\Users\\Dad\\.nuget\\packages\\",
-        "outputPath": "C:\\Repos\\DMChess_3_1\\DMChess_Srv\\obj\\",
+        "outputPath": "C:\\Repos\\DMChess\\DMChess_Srv\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
