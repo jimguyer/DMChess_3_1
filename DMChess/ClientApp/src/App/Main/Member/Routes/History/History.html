@@ -1,0 +1,49 @@
+<tabs (TabClick)="OnClick('Tab', $event)"></tabs>
+<div [ngSwitch]="VM.Show">
+  <label *ngSwitchCase="'BigMsg'" [ngStyle]="VM.BigMsg.Style">{{DM.BigMsg }}</label>
+  <div *ngSwitchCase="'Table'" [ngSwitch]="VM.View">
+    <table *ngSwitchCase="'Opponents'" cellspacing="0" cellpadding="0" [ngStyle]="VM.Table.Style">
+      <tr>
+        <th [ngStyle]="VM.TH_Select.Style"></th>
+        <th [ngStyle]="VM.TH_Img.Style"></th>
+        <th [ngStyle]="VM.TH_TAL.Style">User ID</th>
+        <th [ngStyle]="VM.TH_TAC.Style">My Turn</th>
+        <th [ngStyle]="VM.TH_TAC.Style">Time</th>
+      </tr>
+      <tr *ngFor="let x of VM.Page; index as idx">
+        <td [ngStyle]="VM.TD_Select.Style">
+          <input [ngStyle]="VM.Select.Style" (ngChange)="OnChange('Select', idx)" value=x.Value type="checkbox">
+        </td>
+        <td [ngStyle]="VM.TD_Img.Style">{{x.Photo}}</td>
+        <td [ngStyle]="VM.TD_TAC.Style">{{x.UserId}}</td>
+        <td [ngStyle]="VM.TD_TAC.Style">{{x.MyTurn}}</td>
+        <td [ngStyle]="VM.TD_TAC.Style">{{x.Time}}</td>
+      </tr>
+    </table>
+    <table *ngSwitchCase="'Games'" cellspacing="0" cellpadding="0" [ngStyle]="VM.Table.Style">
+      <tr>
+        <th [ngStyle]="VM.TH_Select.Style"></th>
+        <th [ngStyle]="VM.TH_Img.Style"></th>
+        <th [ngStyle]="VM.TH_TAL.Style">User ID</th>
+        <th [ngStyle]="VM.TH_TAC.Style">Won</th>
+        <th [ngStyle]="VM.TH_TAC.Style">Date</th>
+      </tr>
+      <tr *ngFor="let x of VM.Page; index as idx">
+        <td [ngStyle]="VM.TD_Select.Style">
+          <input [ngStyle]="VM.Select.Style" (ngChange)="OnChange('Select', idx)" value=x.Value type="checkbox">
+        </td>
+        <td [ngStyle]="VM.TD_Img.Style">{{x.Photo}}</td>
+        <td [ngStyle]="VM.TD_TAC.Style">{{x.UserId}}</td>
+        <td [ngStyle]="VM.TD_TAC.Style">{{x.MeWon}}</td>
+        <td [ngStyle]="VM.TD_TAC.Style">{{x.Time}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<button *ngIf="VM.Exit.Show" [ngStyle]="VM.Exit.Style" [disabled]="VM.Exit.Disabled" (click)="OnClick('Exit')" type="button">Exit</button>
+<button *ngIf="VM.Profile.Show" [ngStyle]="VM.Profile.Style" [disabled]="VM.Profile.Disabled|| VM.Disabled" (click)="OnClick('Profile')" type="button">Profile</button>
+<button *ngIf="VM.Challenge.Show" [ngStyle]="VM.Challenge.Style" [disabled]="VM.Challenge.Disabled|| VM.Disabled" (click)="OnClick('Profile')" type="button">Challenge</button>
+<button *ngIf="VM.Game.Show" [ngStyle]="VM.Game.Style" [disabled]="VM.Game.Disabled|| VM.Disabled" type="button">Game</button>
+<button *ngIf="VM.Board.Show" [ngStyle]="VM.Board.Style" [disabled]="VM.Board.Disabled|| VM.Disabled" type="button">Board</button>
+

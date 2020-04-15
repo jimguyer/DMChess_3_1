@@ -1,0 +1,13 @@
+<div [ngStyle]="VM.Div.Style" [ngSwitch]="VM.Switch">
+  <labelctl [VMP]="VM" [VM]="VM.EmailUserId" (Child_Change)="OnChange($event)" (Child_Click)="OnClick($event)"></labelctl>
+  <labelctl *ngSwitchCase="'Password'" [VMP]="VM" [VM]="VM.Password" (Child_Change)="OnChange($event)" (Child_Click)="OnClick($event)"></labelctl>
+  <labelctl *ngSwitchCase="'Text'" [VMP]="VM" [VM]="VM.Password" (Child_Change)="OnChange($event)" (Child_Click)="OnClick($event)"></labelctl>
+  <button [ngStyle]="VM.Toggle.Style" [disabled]="VM.Disabled" (click)="OnClick('Toggle')" [innerHTML]="VM.Toggle.Value"></button>
+</div>
+
+<button [ngStyle]="VM.Recover.Style" [disabled]="VM.Disabled" (click)="OnClick('Recover')">Recover</button>
+<button [ngStyle]="VM.Register.Style" [disabled]="VM.Disabled" (click)="OnClick('Register')">Register</button>
+<button [ngStyle]="VM.Practice.Style" [disabled]="VM.Disabled" (click)="OnClick('Practice')">Practice</button>
+<button [ngStyle]="VM.Privacy.Style" [disabled]="VM.Disabled" (click)="OnClick('Privacy')">Privacy</button>
+<button [ngStyle]="VM.LogIn.Style" [disabled]="VM.Disabled" (click)="OnClick('LogIn')">Log In</button>
+<!--<buttons [VMP]="VM" [VM]="VM.Buttons" (Click_Button)="OnClick($event)"></buttons>-->

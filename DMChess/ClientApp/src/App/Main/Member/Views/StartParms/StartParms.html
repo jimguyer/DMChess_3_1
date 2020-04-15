@@ -1,0 +1,38 @@
+<div [ngSwitch]="VM.Route">
+  <img *ngSwitchCase="'Players'" [ngStyle]="VM.Photo.Style" [src]="VM.Photo.Src" (click)="OnClick(Img)" />
+  <FieldSet *ngSwitchCase="'Start'" [ngStyle]="VM.ByFieldLeg.Fieldset.Style">
+    <legend [ngStyle]="VM.ByFieldLeg.Legend.Style">{{VM.ByLegend.Value}}</legend>
+    <div *ngFor="let x of VM.ByLines; index as idx">
+      <label [ngStyle]="x.Label.Style">{{x.Label.Value}}</label>
+      <input [ngStyle]="x.Ctl.Style" [disabled]="x.Ctl.Disabled" (click)="OnClick('Select', idx)" [(ngModel)]="VM.ByValue" value={{x.Ctl.Value}} type="radio">
+    </div>
+  </FieldSet>
+  <FieldSet [ngStyle]="VM.RatedFieldLeg.Fieldset.Style">
+    <label [ngStyle]="VM.Rated.Label.Style">{{VM.Rated.Label.Value}}</label>
+    <input [ngStyle]="VM.Rated.Ctl.Style" [disabled]="VM.Disabled" [(ngModel)]="VM.Rated.Ctl.Value" (change)="OnChange('Text')" type="checkbox" />
+  </FieldSet>
+  <FieldSet [ngStyle]="VM.TimeFieldLeg.Fieldset.Style">
+    <legend [ngStyle]="VM.TimeFieldLeg.Legend.Style">{{VM.TimeFieldLeg.Legend.Value}}</legend>
+    <label [ngStyle]="VM.TimeInc.Label.Style">{{VM.TimeInc.Label.Value}}</label>
+    <select [ngStyle]="VM.TimeInc.Ctl.Style"
+            [disabled]="VM.Disabled"
+            (change)="OnChange('TimeInc')"
+            [(ngModel)]="VM.TimeInc.Ctl.Value">
+      <option *ngFor="let x of VM.TimeInc.Ctl.Options" [ngValue]="x.Value"> {{x.Label}} </option>
+    </select>
+    <label [ngStyle]="VM.TimeAmt.Label.Style">{{VM.TimeAmt.Label.Value}}</label>
+    <select [ngStyle]="VM.TimeAmt.Ctl.Style"
+            [disabled]="VM.Disabled"
+            (change)="OnChange('TimeAmt')"
+            [(ngModel)]="VM.TimeAmt.Ctl.Value">
+      <option *ngFor="let x of VM.TimeAmt.Ctl.Options" [ngValue]="x.Value"> {{x.Label}} </option>
+    </select>
+  </FieldSet>
+</div>
+<buttons [VMP]="VM" [VM]="VM.Buttons" (Click_Button)="OnClick($event)"></buttons>
+
+
+
+<!--<button [ngStyle]="VM.Exit.Style" [disabled]="VM.Exit.Disabled"  (click)="OnClick('Exit')" type="button">Exit</button>
+<button *ngIf="VM.Back.Show" [ngStyle]="VM.Back.Style"[disabled]="VM.Back.Disabled||VM.Disabled"  (click)="OnClick('Back')" type="button">Back</button>
+<button *ngIf="VM.Next.Show" [ngStyle]="VM.Next.Style" [disabled]="VM.Next.Disabled||VM.Disabled" (click)="OnClick('Next')" type="button">Next</button>-->

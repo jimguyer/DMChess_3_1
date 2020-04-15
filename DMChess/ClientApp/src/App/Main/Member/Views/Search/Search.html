@@ -1,0 +1,22 @@
+<FieldSet [ngStyle]="VM.ByFieldLeg.Fieldset.Style">
+  <legend [ngStyle]="VM.ByFieldLeg.Legend.Style">{{VM.ByFieldLeg.Legend.Value}}</legend>
+  <div *ngFor="let x of VM.ByLines; index as idx">
+    <label [ngStyle]="x.Label.Style">{{x.Label.Value}}</label>
+    <input [ngStyle]="x.Ctl.Style" [disabled]="x.Ctl.Disabled||VM.Input_Disabled" (click)="OnClick('Select', idx)" [(ngModel)]="VM.ByValue" value={{x.Ctl.Value}} type="radio">
+  </div>
+</FieldSet>
+<FieldSet [ngStyle]="VM.TextFieldLeg.Fieldset.Style">
+  <label [ngStyle]="VM.TextLine.Label.Style">{{VM.TextLine.Label.Value}}</label>
+  <input [ngStyle]="VM.TextLine.Ctl.Style" [disabled]="VM.Disabled||VM.Input_Disabled" [(ngModel)]="VM.TextLine.Ctl.Value" (change)="OnChange('Text')" type="text" />
+</FieldSet>
+<FieldSet [ngStyle]="VM.RatingFieldLeg.Fieldset.Style">
+  <legend [ngStyle]="VM.RatingFieldLeg.Legend.Style">{{VM.RatingFieldLeg.Legend.Value}}</legend>
+  <div *ngFor="let x of VM.RatingLines; index as idx">
+    <label [ngStyle]="x.Label.Style">{{x.Label.Value}}</label>
+    <input [ngStyle]="x.Ctl.Style" [disabled]="x.Data.Disabled||VM.Input_Disabled" (click)="OnClick('Select', idx)" [(ngModel)]="x.Ctl.Value" value={{x.Ctl.Value}} type="text">
+  </div>
+</FieldSet>
+<buttons [VMP]="VM" [VM]="VM.Buttons" (Click_Button)="OnClick($event)"></buttons>
+<!--<button [ngStyle]="VM.Exit.Style" [disabled]="VM.Exit.Disabled" (click)="OnClick('Exit')">Exit</button>
+<button [ngStyle]="VM.Back.Style" [disabled]="VM.Back.Disabled||VM.Disabled" (click)="OnClick('Back')">Back</button><br />
+<button [ngStyle]="VM.Search.Style" [disabled]="VM.Search.Disabled||VM.Disabled" (click)="OnClick('Search')">Search</button>-->

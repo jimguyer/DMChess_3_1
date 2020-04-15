@@ -1,0 +1,34 @@
+<!--<table cellspacing="0" cellpadding="0" [ngStyle]="VM.Table.Style">
+  <tr>
+    <th [ngStyle]="VM.Table.TH_Select.Style"></th>
+    <th [ngStyle]="VM.Table.TH_TAC.Style">Level</th>
+    <th [ngStyle]="VM.Table.TH_TAC.Style">Price</th>
+    <th [ngStyle]="VM.Table.TH_TAC.Style">Profiles</th>
+    <th [ngStyle]="VM.Table.TH_TAC.Style">Games</th>
+  </tr>
+  <tr *ngFor="let x of VM.Levels; index as idx">
+    <td [ngStyle]="VM.Table.TD_Select.Style"><input [ngStyle]="VM.XSelect.Style" [disabled]="VM.Disabled||x.Disabled" (click)="OnClick('Select', idx)" [(ngModel)]="DM.Value" value={{x.Value}} type="radio"></td>
+    <td [ngStyle]="VM.Table.TD_TAL.Style">{{x.Label}}</td>
+    <td [ngStyle]="VM.Table.TD_TAC.Style">{{x.Price}}</td>
+    <td [ngStyle]="VM.Table.TD_TAC.Style">{{x.Profiles}}</td>
+    <td [ngStyle]="VM.Table.TD_TAC.Style">{{x.Games}}</td>
+  </tr>
+</table>-->
+<label *ngIf="VM.CurLevel.Show" [ngStyle]="VM.CurLevel.Label.Style">{{VM.CurLevel.Label.Value}}</label>
+<label *ngIf="VM.CurLevel.Show" [ngStyle]="VM.CurLevel.Ctl.Style">{{VM.CurLevel.Ctl.Value}}</label>
+<label *ngIf="VM.NewLevel.Show" [ngStyle]="VM.NewLevel.Label.Style">{{VM.NewLevel.Label.Value}}</label>
+<label *ngIf="VM.NewLevel.Show" [ngStyle]="VM.NewLevel.Ctl.Style">{{VM.NewLevel.Ctl.Value}}</label>
+
+<label *ngIf="VM.CurExp.Show" [ngStyle]="VM.CurExp.Label.Style">{{VM.CurExp.Label.Value}}</label>
+<label *ngIf="VM.CurExp.Show" [ngStyle]="VM.CurExp.Ctl.Style">{{VM.CurExp.Ctl.Value}}</label>
+<label *ngIf="VM.NewExp.Show" [ngStyle]="VM.NewExp.Label.Style">{{VM.NewExp.Label.Value}}</label>
+<label *ngIf="VM.NewExp.Show" [ngStyle]="VM.NewExp.Ctl.Style">{{VM.NewExp.Ctl.Value}}</label>
+
+<img [ngStyle]="VM.Paypal.Style" [src]="VM.Paypal.Src" (click)="OnClick('Paypal')">
+
+
+<!--<buttons [VMP]="VM" [VM]="VM.Buttons" (Click_Button)="OnClick($event)"></buttons>-->
+
+<button [ngStyle]="VM.Exit.Style" [disabled]="VM.Exit.Disabled" (click)="OnClick('Exit')" type="button">Exit</button>
+<button *ngIf="VM.Extend.Show" [ngStyle]="VM.Extend.Style" [disabled]="VM.Disabled|| VM.Extend.Disabled" (click)="OnClick('Extend')" type="button">Extend</button>
+<button *ngIf="VM.Upgrade.Show" [ngStyle]="VM.Upgrade.Style" [disabled]="VM.Disabled|| VM.Upgrade.Disabled" (click)="OnClick('Upgrade')" type="button">Upgrade</button>

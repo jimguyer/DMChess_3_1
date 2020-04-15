@@ -1,0 +1,21 @@
+<div *ngFor="let m of VM; index as mIdx">
+  <label [innerHTML]="m.Name"></label>
+  <!--<table *ngIf="VM[mIdx].Show" cellspacing="0" cellpadding="0" [ngStyle]="m.Style">-->
+  <table *ngIf="VM[mIdx].Show" cellspacing="0" cellpadding="0" [ngStyle]="m.Style">
+    <tr>
+      <th *ngFor="let o of m.Opts; index as oIdx" [innerHTML]="o.Label" [ngStyle]="o.Style" (mouseenter)="OnEnter(mIdx, oIdx)" (mouseleave)="OnLeave(mIdx, oIdx)" (click)="OnClick(mIdx, oIdx)"></th>
+    </tr>
+  </table>
+</div>
+
+<!--<div *ngFor="let m of VM; index as mIdx">
+  <div  *ngIf="mIdx === 0">
+    <label [innerHTML]="m.Label"></label>
+    <label [innerHTML]="m.Show"></label>
+    <label [innerHTML]="m.Opts"></label>
+    <div *ngFor="let o of m.Opts; index as oIdx">
+      <label [innerHTML]="m.Name"></label>
+      <label [innerHTML]="o.Label"></label>
+    </div>
+  </div>
+</div>-->

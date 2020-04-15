@@ -1,0 +1,71 @@
+<tabs (TabClick)="OnClick('Tab', $event)"></tabs>
+<div [ngSwitch]="VM.Show">
+  <label *ngSwitchCase="'BigMsg'" [ngStyle]="VM.BigMsg.Style">{{DM.BigMsg }}</label>
+  <div *ngSwitchCase="'Table'" [ngSwitch]="VM.View">
+    <table *ngSwitchCase="'Active'" cellspacing="0" cellpadding="0" [ngStyle]="VM.Table.Style">
+      <tr>
+        <th [ngStyle]="VM.TH_Select.Style"></th>
+        <th [ngStyle]="VM.TH_Img.Style"></th>
+        <th [ngStyle]="VM.TH_TAL.Style">User ID</th>
+        <th [ngStyle]="VM.TH_TAC.Style">My Turn</th>
+        <th [ngStyle]="VM.TH_TAC.Style">Time</th>
+      </tr>
+      <tr *ngFor="let x of DM.Page; index as idx">
+        <td [ngStyle]="VM.TD_Select.Style">
+          <input [ngStyle]="VM.XSelect.Style" (ngChange)="OnChange('Select', idx)" value=x.Value type="checkbox">
+        </td>
+        <td [ngStyle]="VM.TD_Img.Style">{{x.Photo}}</td>
+        <td [ngStyle]="VM.TD_TAC.Style">{{x.UserId}}</td>
+        <td [ngStyle]="VM.TD_TAC.Style">{{x.MyTurn}}</td>
+        <td [ngStyle]="VM.TD_TAC.Style">{{x.Time}}</td>
+      </tr>
+    </table>
+    <table *ngSwitchCase="'Received'" cellspacing="0" cellpadding="0" [ngStyle]="VM.Table.Style">
+      <tr>
+        <th [ngStyle]="VM.TH_Select.Style"></th>
+        <th [ngStyle]="VM.TH_Img.Style"></th>
+        <th [ngStyle]="VM.TH_TAL.Style">User ID</th>
+        <th [ngStyle]="VM.TH_TAC.Style">Rated</th>
+        <th [ngStyle]="VM.TH_TAC.Style">Time</th>
+      </tr>
+      <tr *ngFor="let x of DM.Page; index as idx">
+        <td [ngStyle]="VM.TD_Select.Style">
+          <input [ngStyle]="VM.Select.Style" (ngChange)="OnChange('Select', idx)" value=x.Value type="checkbox">
+        </td>
+        <td [ngStyle]="VM.TD_Photo.Style">{{x.Photo}}</td>
+        <td [ngStyle]="VM.TD_TAC.Style">{{x.UserId}}</td>
+        <td [ngStyle]="VM.TD_TAC.Style">{{x.Rated}}</td>
+        <td [ngStyle]="VM.TD_TAC.Style">{{x.Time}}</td>
+      </tr>
+    </table>
+    <table *ngSwitchCase="'Sent'" cellspacing="0" cellpadding="0" [ngStyle]="VM.Table.Style">
+      <tr>
+        <th [ngStyle]="VM.TH_Select.Style"></th>
+        <th [ngStyle]="VM.TH_Photo.Style"></th>
+        <th [ngStyle]="VM.TH_TAL.Style">User ID</th>
+        <th [ngStyle]="VM.TH_TAC.Style">My Turn</th>
+        <th [ngStyle]="VM.TH_TAC.Style">Time</th>
+      </tr>
+      <tr *ngFor="let x of DM.Page; index as idx">
+        <td [ngStyle]="VM.TD_Select.Style">
+          <input [ngStyle]="VM.XSelect.Style" (ngChange)="OnChange('Select', idx)" value=x.Value type="checkbox">
+        </td>
+        <td [ngStyle]="VM.TD_Photo.Style">{{x.Photo}}</td>
+        <td [ngStyle]="VM.TD_TAC.Style">{{x.UserId}}</td>
+        <td [ngStyle]="VM.TD_TAC.Style">{{x.MyTurn}}</td>
+        <td [ngStyle]="VM.TD_TAC.Style">{{x.Time}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+
+
+<button *ngIf="VM.Exit.Show" [ngStyle]="VM.Exit.Style" [disabled]="VM.Exit.Disabled" (click)="OnClick('Exit')" type="button">Exit</button>
+<button *ngIf="VM.Board.Show" [ngStyle]="VM.Board.Style" [disabled]="VM.Disabled|| VM.Board.Disabled" type="button">Board</button>
+<button *ngIf="VM.Decline.Show" [ngStyle]="VM.Decline.Style" [disabled]="VM.Disabled|| VM.Decline.Disabled" type="button">Decline</button>
+<button *ngIf="VM.Retract.Show" [ngStyle]="VM.Retract.Style" [disabled]="VM.Disabled|| VM.Retract.Disabled" type="button">Retract</button>
+<button *ngIf="VM.Start.Show" [ngStyle]="VM.Start.Style" [disabled]="VM.Disabled|| VM.Start.Disabled" type="button">Start</button>
+<button *ngIf="VM.Accept.Show" [ngStyle]="VM.Accept.Style" [disabled]="VM.Disabled|| VM.Accept.Disabled" type="button">Accept</button>
+<button *ngIf="VM.Profile.Show" [ngStyle]="VM.Profile.Style" [disabled]="VM.Disabled|| VM.Profile.Disabled" type="button">Profile</button>
+<button *ngIf="VM.Resend.Show" [ngStyle]="VM.Resend.Style" [disabled]="VM.Disabled|| VM.Resend.Disabled" (click)="OnClick('Resend')" type="button">Resend</button>

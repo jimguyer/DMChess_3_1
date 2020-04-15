@@ -1,0 +1,21 @@
+<div [ngSwitch]="VM.Show">
+  <img *ngSwitchCase="'Photo'" [ngStyle]="VM.Photo.Style" [src]="VM.Photo.Src" (click)="OnClick(Photo)" />
+  <FieldSet *ngSwitchCase="'Stats'" [ngStyle]="VM.StatsFieldset.Style">
+    <legend [ngStyle]="VM.StatsLegend.Style">{{VM.StatsLegend.Value}}</legend>
+
+    <label *ngIf="VM.Email.Show" [ngStyle]="VM.Email.Label.Style">{{VM.Email.Label.Value}}</label>
+    <label *ngIf="VM.Email.Show" [ngStyle]="VM.Email.Data.Style">{{VM.Email.Data.Value}}</label>
+
+    <label *ngIf="VM.Name.Show" [ngStyle]="VM.Name.Label.Style">{{VM.Name.Label.Value}}</label>
+    <label *ngIf="VM.Name.Show" [ngStyle]="VM.Name.Data.Style">{{VM.Name.Data.Value}}</label>
+
+  </FieldSet>
+</div>
+<FieldSet [ngStyle]="VM.MsgFieldset.Style">
+  <legend [ngStyle]="VM.MsgLegend.Style">{{VM.MsgLegend.Value}}</legend>
+  <textarea [ngStyle]="VM.Msg.Style" [(ngModel)]="VM.Msg.Value" ></textarea>
+</FieldSet>
+
+<button [ngStyle]="VM.Exit.Style" [disabled]="VM.Disabled|| VM.Exit_Disabled" (click)="OnClick('Exit')" type="button">Exit</button>
+<button [ngStyle]="VM.Back.Style" [disabled]="VM.Disabled|| VM.Back_Disabled" (click)="OnClick('Back')" type="button">Back</button>
+<button [ngStyle]="VM.Next.Style" [disabled]="VM.Disabled|| VM.Next_Disabled" (click)="OnClick('Next')" type="button">Next</button>

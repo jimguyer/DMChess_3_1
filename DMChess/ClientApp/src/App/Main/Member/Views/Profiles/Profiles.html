@@ -1,0 +1,22 @@
+<div [ngSwitch]="VM.Show">
+  <label *ngSwitchCase="'BigMsg'" [ngStyle]="VM.BigMsg.Style">{{VM.BigMsg.Value}}</label>
+  <table *ngSwitchCase="'Table'" [ngStyle]="VM.Table.Style" cellspacing="0" cellpadding="0">
+    <tr>
+      <th [ngStyle]="VM.TH_Select.Style"></th>
+      <th [ngStyle]="VM.TH_Img.Style"></th>
+      <th [ngStyle]="VM.TH_TAC.Style">User ID</th>
+      <th [ngStyle]="VM.TH_TAC.Style">Rating</th>
+    </tr>
+    <tr *ngFor="let x of VM.Page.Lines; index as idx">
+      <td [ngStyle]="VM.TD_Select.Style"><input [ngStyle]="VM.XSelect.Style" [disabled]="VM.Disabled" (click)="OnClick('RowSelect', idx)" [(ngModel)]="VM.Page.Select" value={{x.Value}} type="radio"></td>
+      <td [ngStyle]="VM.TD_Img.Style" [style.backgroundImage]="'url('+ x.Photo_Src +')'" (click)="OnClick('Img', idx)">
+      <td [ngStyle]="VM.TD_TAC.Style" (click)="OnClick('TD', idx)">{{x.UserId}}</td>
+      <td [ngStyle]="VM.TD_TAC.Style" (click)="OnClick('TD', idx)">{{x.Rating}}</td>
+    </tr>
+  </table>
+</div>
+<page (pageEvent)="OnPageEvent($event)" ></page>
+<button [ngStyle]="VM.Exit.Style" [disabled]="VM.Exit.Disabled" (click)="OnClick('Exit')" type="button">Exit</button>
+<button *ngIf="VM.Back.Show" [ngStyle]="VM.Back.Style" [disabled]="VM.Disabled|| VM.Back.Disabled" (click)="OnClick('Back')" type="button">Back</button>
+<button *ngIf="VM.Challenge.Show" [ngStyle]="VM.Challenge.Style" [disabled]="VM.Disabled|| VM.Challenge.Disabled" (click)="OnClick('Challenge')" type="button">Challenge</button>
+<button *ngIf="VM.Select.Show" [ngStyle]="VM.Select.Style" [disabled]="VM.Disabled|| VM.Select.Disabled" (click)="OnClick('Select')" type="button">Select</button>

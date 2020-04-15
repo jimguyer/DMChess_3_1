@@ -1,0 +1,41 @@
+<div ng-style="Class.Div">
+  <div *ngFor="let x of VM.Poss; index as idx"><img [ngStyle]="x.Style" [src]="x.Src" (click)="OnClick('Pos', idx)"></div>
+  <div *ngFor="let x of VM.Hexs"><img [ngStyle]="x.Style" [src]="x.Src"></div>
+  <div *ngFor="let x of VM.Triangles"><img [ngStyle]="x.Style" [src]="x.Src"></div>
+  <div *ngFor="let x of VM.Pieces"><div *ngIf="VM.Pieces_Show"><img [ngStyle]="x.Style" [src]="x.Src"></div></div>
+  <div *ngFor="let x of VM.PossOn"><div *ngIf="x.Show"><img [ngStyle]="x.Style" [src]="x.Src"></div></div>
+  <div *ngFor="let x of VM.Moves"><div *ngIf="VM.Moves_Show"><img [ngStyle]="x.Style" [src]="VM.Moves_Src"></div></div>
+  <!--*************************************************************************************************************-->
+  <img [ngStyle]="VM.Exit.Style" [src]="VM.Exit.Src" (click)="OnClick('Exit')">
+  <img *ngIf="VM.FirstPrev_Show" [ngStyle]="VM.First.Style" [src]="VM.First.Src" (click)="OnClick('First')">
+  <img *ngIf="VM.FirstPrev_Show" [ngStyle]="VM.Prev.Style" [src]="VM.Prev.Src" (click)="OnClick('Prev')">
+  <img *ngIf="VM.NextLast_Show" [ngStyle]="VM.Next.Style" [src]="VM.Next.Src" (click)="OnClick('Next')">
+  <img *ngIf="VM.NextLast_Show" [ngStyle]="VM.Last.Style" [src]="VM.Last.Src" (click)="OnClick('Last')">
+
+  <img [ngStyle]="VM.Audio.Style" [src]="VM.Audio.Src" (click)="OnClick('Audio')">
+  <img *ngIf="VM.AudioOff.Show" [ngStyle]="VM.AudioOff.Style" [src]="VM.AudioOff.Src" (click)="OnClick('Audio')">
+
+  <img *ngIf="VM.Clock.Show" [ngStyle]="VM.Clock.Style" [src]="VM.Clock.Src" (click)="OnClick('Clock')">
+  <img *ngIf="VM.ClockOff.Show" [ngStyle]="VM.ClockOff.Style" [src]="VM.ClockOff.Src" (click)="OnClick('Clock')">
+
+  <img *ngIf="VM.Copy.Show" [ngStyle]="VM.Copy.Style" [src]="VM.Copy.Src" (click)="OnClick('Copy')">
+  <img *ngIf="VM.CopyOn.Show" [ngStyle]="VM.CopyOn.Style" [src]="VM.CopyOn.Src" (click)="OnClick('Copy')">
+
+  <img *ngIf="VM.Flip.Show" [ngStyle]="VM.Flip.Style" [src]="VM.Flip.Src" (click)="OnClick('Flip')">
+  <img *ngIf="VM.FlipOn.Show" [ngStyle]="VM.FlipOn.Style" [src]="VM.FlipOn.Src" (click)="OnClick('Flip')">
+
+  <img *ngIf="VM.Save.Show" [ngStyle]="VM.Save.Style" [src]="VM.Save.Src" (click)="OnClick('Save')">
+
+  <img *ngIf="VM.Resign.Show" [ngStyle]="VM.Resign.Style" [src]="VM.Resign.Src" (click)="OnClick('Resign')">
+  <img *ngIf="VM.ResignOn.Show" [ngStyle]="VM.ResignOn.Style" [src]="VM.ResignOn.Src" (click)="OnClick('Resign')">
+
+  <img *ngIf="VM.Start.Show" [ngStyle]="VM.Start.Style" [src]="VM.Start.Src" (click)="OnClick('Start')">
+  <img *ngIf="VM.StartOn.Show" [ngStyle]="VM.StartOn.Style" [src]="VM.StartOn.Src" (click)="OnClick('Start')">
+  <img *ngIf="VM.StartOff.Show" [ngStyle]="VM.StartOff.Style" [src]="VM.StartOff.Src" (click)="OnClick('Start')">
+  <!--*************************************************************************************************************-->
+  <img *ngIf="VM.Photos_Show" [ngStyle]="VM.OpImg.Style" [src]="VM.OpImg.Src" (click)="OnClick('OpImg')">
+  <label *ngIf="VM.OpTime.Show" [ngStyle]="VM.OpTime.Style" (click)="OnClick('OpImg')"> </label>
+
+  <img *ngIf="VM.Photos_Show" [ngStyle]="VM.MeImg.Style" [src]="VM.MeImg.Src" (click)="OnClick('MeImg')">
+  <label *ngIf="VM.MeTime.Show" [ngStyle]="VM.MeImg.Style" (click)="OnClick('MeImg')"> </label>
+</div>

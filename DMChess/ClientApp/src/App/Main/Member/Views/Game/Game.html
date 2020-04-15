@@ -1,0 +1,35 @@
+<div [ngSwitch]="VM.Switch">
+  <img *ngSwitchCase="'Photo'" [ngStyle]="VM.Photo.Style" [src]="VM.Photo.Src" (click)="VM.ClickPhoto()" />
+  <FieldSet *ngSwitchCase="'Opponent'" [ngStyle]="VM.OpFieldLeg.FieldSet.Style">
+    <legend [ngStyle]="VM.OpFieldLeg.Legend.Style">{{VM.OpFieldLeg.Legend.Value}}</legend>
+
+    <label *ngIf="VM.UserId.Show" [ngStyle]="VM.UserId.Label.Style">User ID:</label>
+    <label *ngIf="VM.UserId.Show" [ngStyle]="VM.UserId.Ctl.Style">{{VM.UserId.Ctl.Value}}</label>
+
+    <label *ngIf="VM.Group.Show" [ngStyle]="VM.Group.Label.Style">Group:</label>
+    <label *ngIf="VM.Group.Show" [ngStyle]="VM.Group.Ctl.Style">{{VM.Group.Ctl.Value}}</label>
+
+    <label *ngIf="VM.Rating.Show" [ngStyle]="VM.Rating.Label.Style">Rating:</label>
+    <label *ngIf="VM.Rating.Show" [ngStyle]="VM.Rating.Ctl.Style">{{VM.Rating.Ctl.Value}}</label>
+  </FieldSet>
+</div>
+<FieldSet [ngStyle]="VM.StatsFieldLeg.Fieldset.Style">
+  <legend [ngStyle]="VM.StatsFieldLeg.Legend.Style">{{VM.StatsFieldLeg.Legend.Value}}</legend>
+  <label *ngIf="VM.Name.Show" [ngStyle]="VM.Name.Label.Style">Name:</label>
+  <label *ngIf="VM.Name.Show" [ngStyle]="VM.Name.Ctl.Style">{{VM.Name.Ctl.Value}}</label>
+
+  <label [ngStyle]="VM.Rated.Label.Style">Rated:</label>
+  <label [ngStyle]="VM.Rated.Ctl.Style">{{VM.Rated.Ctl.Value}}</label>
+
+  <label [ngStyle]="VM.Time.Label.Style">Move Time:</label>
+  <label [ngStyle]="VM.Time.Ctl.Style">{{VM.Time.Ctl.Value}}</label>
+</FieldSet>
+<button *ngIf="VM.Exit.Show" [ngStyle]="VM.Exit.Style" [disabled]="VM.Disabled" (click)="OnClick('Exit')" type="button">Exit</button>
+<button *ngIf="VM.Accept.Show" [ngStyle]="VM.Accept.Style" [disabled]="VM.Disabled" (click)="OnClick('Accept')" type="button">Accept</button>
+<button *ngIf="VM.Back.Show" [ngStyle]="VM.Back.Style" [disabled]="VM.Disabled" (click)="OnClick('Back')" type="button">Back</button>
+<button *ngIf="VM.Board.Show" [ngStyle]="VM.Board.Style" [disabled]="VM.Disabled || VM.Board.Disabled" (click)="OnClick('Board')" type="button">Board</button>
+<button *ngIf="VM.Decline.Show" [ngStyle]="VM.Decline.Style" [disabled]="VM.Disabled" (click)="OnClick('Decline')" type="button">Decline</button>
+<button *ngIf="VM.Next.Show" [ngStyle]="VM.Next.Style" [disabled]="VM.Disabled||VM.Next.Disabled" (click)="OnClick('Next')" type="button">Next</button>
+<button *ngIf="VM.Resend.Show" [ngStyle]="VM.Resend.Style" [disabled]="VM.Disabled||VM.Resend.Disabled" (click)="OnClick('Resend')" type="button">Resend</button>
+<button *ngIf="VM.Retract.Show" [ngStyle]="VM.Retract.Style" [disabled]="VM.Disabled||VM.Retract.Disabled" (click)="OnClick('Retract')" type="button">Retract</button>
+<button *ngIf="VM.Send.Show" [ngStyle]="VM.Send.Style" [disabled]="VM.Disabled|| VM.Send.Disabled" (click)="OnClick('Send')" type="button">Send</button>

@@ -1,0 +1,47 @@
+<img [ngStyle]="VM.IconL.Style" [src]="VM.IconL.Src" (click)="OnClick('IconLeft')" alt="">
+<img [ngStyle]="VM.IconR.Style" [src]="VM.IconR.Src" (click)="OnClick('IconRight')" alt="">
+<input #InputPhoto style="display: none;" type="file" multiple (change)="OnChange(InputPhoto.files)" />
+
+<div [ngSwitch]="VM.Show">
+  <div *ngSwitchCase="'Square'">
+    <img [ngStyle]="VM.SquareImg.Style" [src]="VM.SquareImg.Src" (click)="InputPhoto.click()" />
+  </div>
+  <div *ngSwitchCase="'Splash'">
+    <div [ngStyle]="VM.BaseDiv.Style">
+      <img [ngStyle]="VM.SplashImg.Style" [src]="VM.SplashImg.Src" (click)="InputPhoto.click()" />
+    </div>
+  </div>
+  <div *ngSwitchCase="'Rotate'">
+    <img [ngStyle]="VM.RotateImg.Style" [src]="VM.RotateImg.Src" (click)="InputPhoto.click()" />
+    <div [ngStyle]="VM.IconDiv.Style">
+      <img [ngStyle]="VM.RotateLeft.Style" [src]="VM.RotateLeft.Src" (click)="OnClick('RotateLeft')" />
+      <img [ngStyle]="VM.RotateRight.Style" [src]="VM.RotateRight.Src" (click)="OnClick('RotateRight')" />
+    </div>
+  </div>
+  <div *ngSwitchCase="'Crop'">
+    <img [ngStyle]="VM.BaseImg.Style" [src]="VM.BaseImg.Src" (click)="InputPhoto.click()" />
+    <img [ngStyle]="VM.CropImg.Style" [src]="VM.CropImg.Src" (click)="InputPhoto.click()" />
+    <div [ngStyle]="VM.IconDiv.Style">
+      <img *ngIf="VM.CropLeft.Show" [ngStyle]="VM.CropLeft.Style" [src]="VM.CropLeft.Src" (click)="OnClick('CropLeft')" />
+      <img *ngIf="VM.CropRight.Show" [ngStyle]="VM.CropRight.Style" [src]="VM.CropRight.Src" (click)="OnClick('CropRight')" />
+
+      <img *ngIf="VM.CropUp.Show" [ngStyle]="VM.CropUp.Style" [src]="VM.CropUp.Src" (click)="OnClick('CropUp')" />
+      <img *ngIf="VM.CropDown.Show" [ngStyle]="VM.CropDown.Style" [src]="VM.CropDown.Src" (click)="OnClick('CropDown')" />
+
+      <img *ngIf="VM.CropPlus.Show" [ngStyle]="VM.CropPlus.Style" [src]="VM.CropPlus.Src" (click)="OnClick('CropPlus')" />
+      <img *ngIf="VM.CropMinus.Show" [ngStyle]="VM.CropMinus.Style" [src]="VM.CropMinus.Src" (click)="OnClick('CropMinus')" />
+    </div>
+  </div>
+  <div *ngSwitchCase="'Save'">
+    <img [ngStyle]="VM.SaveImg.Style" [src]="VM.SaveImg.Src" (click)="InputPhoto.click()" />
+  </div>
+</div>
+<button *ngIf="VM.Exit.Show" [ngStyle]="VM.Exit.Style" [disabled]="VM.Disabled" (click)="OnClick('Exit')" type="button">Exit</button>
+<button *ngIf="VM.Add.Show" [ngStyle]="VM.Add.Style" [disabled]="VM.Disabled|| VM.Add.Disabled" (click)="OnClick('Add')" type="button">Add</button>
+<button *ngIf="VM.Back.Show" [ngStyle]="VM.Back.Style" [disabled]="VM.Disabled|| VM.Back.Disabled" (click)="OnClick('Back')" type="button">Back</button>
+<button *ngIf="VM.Browse.Show" [ngStyle]="VM.Browse.Style" [disabled]="VM.Disabled|| VM.Browse.Disabled" (click)="InputPhoto.click()" type="button">Browse</button>
+<button *ngIf="VM.Change.Show" [ngStyle]="VM.Change.Style" [disabled]="VM.Disabled|| VM.Change.Disabled" (click)="OnClick('Change')" type="button">Change</button>
+<button *ngIf="VM.Done.Show" [ngStyle]="VM.Done.Style" [disabled]="VM.Disabled|| VM.Done.Disabled" (click)="OnClick('Done')" type="button">Done</button>
+<button *ngIf="VM.Save.Show" [ngStyle]="VM.Save.Style" [disabled]="VM.Disabled|| VM.Save.Disabled" (click)="OnClick('Save')" type="button">Save</button>
+<button *ngIf="VM.Skip.Show" [ngStyle]="VM.Skip.Style" [disabled]="VM.Disabled|| VM.Skip.Disabled" (click)="OnClick('Skip')" type="button">Skip</button>
+

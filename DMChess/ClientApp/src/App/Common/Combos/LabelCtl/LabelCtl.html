@@ -1,0 +1,11 @@
+<label [ngStyle]="VM.Label.Style" [innerHTML]="VM.Label.Value"></label>
+<div [ngSwitch]="VM.Ctl.CtlType">
+  <input *ngSwitchCase="'C'" [ngStyle]="VM.Ctl.Style" [disabled]="VMP.Disabled||VM.Disabled" (ngModelChange)="OnChange()" (click)="OnClick()" [(ngModel)]="VM.Ctl.Value" type="checkbox">
+  <input *ngSwitchCase="'P'" [ngStyle]="VM.Ctl.Style" [disabled]="VMP.Disabled||VM.Disabled" (ngModelChange)="OnChange()" (click)="OnClick()" [(ngModel)]="VM.Ctl.Value" type="password">
+  <input *ngSwitchCase="'R'" [ngStyle]="VM.Ctl.Style" [disabled]="VMP.Disabled||VM.Disabled" (ngModelChange)="OnChange()" (click)="OnClick()" [(ngModel)]="VM.Ctl.Value" type="radio">
+  <input *ngSwitchCase="'T'" [ngStyle]="VM.Ctl.Style" [disabled]="VMP.Disabled||VM.Disabled" (ngModelChange)="OnChange()" (click)="OnClick()" [(ngModel)]="VM.Ctl.Value" type="text">
+  <img *ngSwitchCase="'I'" [ngStyle]="VM.Ctl.Style" [src]="VM.Ctl.Value" (click)="OnClick()">
+  <select *ngSwitchCase="'S'" [ngStyle]="VM.Ctl.Style" [disabled]="VMP.Disabled||VM.Disabled" (ngModelChange)="OnChange()" (click)="OnClick()" [(ngModel)]="VM.Ctl.Value">
+    <option *ngFor="let x of VM.Ctl.Options" [ngValue]="x.Value"> {{x.Label}} </option>
+  </select>
+</div>

@@ -1,0 +1,8 @@
+<table cellspacing="0" cellpadding="0" [ngStyle]="VM.Frame.Style">
+  <tr>
+    <th *ngIf="VM.IndentL.Show" [ngStyle]="VM.Tabs.IndentL.Style"></th>
+    <th *ngFor="let x of VM.Values; index as idx" [ngStyle]="VM.Styles[idx]" (click)="OnClick(idx)">{{x}}</th>
+    <th  *ngIf="VM.IndentR.Show" [ngStyle]="VM.Tabs.IndentR.Style"></th>
+  </tr>
+  <tr><td [ngStyle]="VM.Body.Style" colspan="9"></td></tr>
+</table>

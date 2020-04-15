@@ -1,6 +1,14 @@
-<body>
+<ftr [VMP]="VM" [VM]="VM.Ftr"></ftr>
+<hdr [VMP]="VM" [VM]="VM.Hdr"></hdr>
+
+<img [ngStyle]="VM.IconL.Style" [src]="VM.IconL.Src" (click)="OnClick('IconLeft')" alt="">
+<img [ngStyle]="VM.IconR.Style" [src]="VM.IconR.Src" (click)="OnClick('IconRight')" alt="">
+<img [ngStyle]="VM.Background.Style" [src]="VM.Background.Src" />
+<router-outlet></router-outlet>
+
+<!--<body>
   <app-nav-menu></app-nav-menu>
   <div class="container">
     <router-outlet></router-outlet>
   </div>
-</body>
+</body>-->

@@ -1,0 +1,6 @@
+<div *ngIf="VM.Frame.Show" [ngStyle]="VM.Frame.Style">
+  <img *ngIf="VM.First.Show" [ngStyle]="VM.First.Style" [src]="VM.First.Src" (click)="OnClick('First')">
+  <img *ngIf="VM.First.Show" [ngStyle]="VM.Prev.Style" [src]="VM.Prev.Src" (click)="OnClick('Prev')">
+  <img *ngIf="VM.Last.Show" [ngStyle]="VM.Next.Style" [src]="VM.Next.Src" (click)="OnClick('Next')">
+  <img *ngIf="VM.Last.Show" [ngStyle]="VM.Last.Style" [src]="VM.Last.Src" (click)="OnClick('Last')">
+</div>

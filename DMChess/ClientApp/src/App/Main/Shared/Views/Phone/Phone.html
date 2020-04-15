@@ -1,0 +1,29 @@
+<img [ngStyle]="VM.IconL.Style" [src]="VM.IconL.Src" (click)="OnClick('IconLeft')" alt="">
+<img [ngStyle]="VM.IconR.Style" [src]="VM.IconR.Src" (click)="OnClick('IconRight')" alt="">
+<div [ngSwitch]="VM.Route">
+  <div *ngSwitchCase="'Register'">
+    <fieldleg [VMP]="VM" [VM]="VM.FieldLeg"></fieldleg>
+    <labelctl [VMP]="VM" [VM]="VM.Carrier" (Child_Change)="OnChange($event)" (Child_Click)="OnClick($event)"></labelctl>
+    <button [ngStyle]="VM.Skip.Style" [disabled]="VM.Disabled" (click)="OnClick('Skip')" type="button">Skip</button>
+    <button [ngStyle]="VM.Save.Style" [disabled]="VM.Disabled|| VM.Save.Disabled" (click)="OnClick('Save')" type="button">Save</button>
+  </div>
+  <div *ngSwitchCase="'User'" [ngSwitch]="VM.Show">
+    <div *ngSwitchCase="'Entry'">
+      <labelctl [VMP]="VM" [VM]="VM.Current" (Child_Change)="OnChange($event)" (Child_Click)="OnClick($event)"></labelctl>
+      <labelctl [VMP]="VM" [VM]="VM.Carrier" (Child_Change)="OnChange($event)" (Child_Click)="OnClick($event)"></labelctl>
+      <labelctl [VMP]="VM" [VM]="VM.Number" (Child_Change)="OnChange($event)" (Child_Click)="OnClick($event)"></labelctl>
+      <button [ngStyle]="VM.Exit.Style" [disabled]="VM.Exit.Disabled" (click)="OnClick('Exit')" type="button">Exit</button>
+      <button [ngStyle]="VM.Confirm.Style" [disabled]="VM.Disabled|| VM.Confirm.Disabled" (click)="OnClick('Confirm')" type="button">Confirm</button>
+    </div>
+    <div *ngSwitchCase="'Confirm'">
+      <labelctl [VMP]="VM" [VM]="VM.Code" (Child_Change)="OnChange($event)" (Child_Click)="OnClick($event)"></labelctl>
+      <button [ngStyle]="VM.Exit.Style" [disabled]="VM.Exit.Disabled" (click)="OnClick('Exit')" type="button">Exit</button>
+      <button [ngStyle]="VM.Confirm.Style" [disabled]="VM.Disabled|| VM.Confirm.Disabled" (click)="OnClick('Confirm')" type="button">Confirm</button>
+      <button [ngStyle]="VM.Reenter.Style" [disabled]="VM.Disabled|| VM.Reenter.Disabled" (click)="OnClick('Reenter')" type="button">Reenter</button>
+      <button [ngStyle]="VM.Resend.Style" [disabled]="VM.Disabled|| VM.Resend.Disabled" (click)="OnClick('Resend')" type="button">Resend</button>
+    </div>
+  </div>
+</div>
+
+
+

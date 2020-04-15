@@ -1,0 +1,4 @@
+<div *ngFor="let x of VM.Lines; index as idx">
+  <label [ngStyle]="x.Label.Style">{{x.Label.Value}}</label>
+  <input [ngStyle]="x.Data.Style" [disabled]="x.Data.Disabled||VMP.Disabled" (click)="OnClick(idx)" [(ngModel)]="VM.Value" value={{x.Data.Value}} type="radio">
+</div>

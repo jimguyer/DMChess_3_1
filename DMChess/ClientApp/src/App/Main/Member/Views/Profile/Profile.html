@@ -1,0 +1,18 @@
+<FieldSet [ngStyle]="VM.FieldLeg.Fieldset.Style">
+  <legend [ngStyle]="VM.FieldLeg.Legend.Style">{{VM.FieldLeg.Legend.Value}}</legend>
+  <img [ngStyle]="VM.Img.Style" [src]=VM.Img.Src (click)="OnClick('Img')" />
+  <label *ngIf="'VM.UserId.Show'" [ngStyle]="VM.UserId.Label.Style">User ID:</label>
+  <label *ngIf="'VM.UserId.Show'" [ngStyle]="VM.UserId.Ctl.Style">{{DM.UserId}}</label>
+  <label *ngIf="'VM.Name.Show'" [ngStyle]="VM.Name.Label.Style">Name:</label>
+  <label *ngIf="'VM.Name.Show'" [ngStyle]="VM.Name.Ctl.Style">{{DM.Name}}</label>
+  <label *ngIf="'VM.Rating.Show'" [ngStyle]="VM.Rating.Label.Style">Rating:</label>
+  <label *ngIf="'VM.Rating.Show'" [ngStyle]="VM.Rating.Ctl.Style">{{DM.Rating}}</label>
+  <label *ngIf="'VM.Group.Show'" [ngStyle]="VM.Group.Label.Style">Group:</label>
+  <label *ngIf="'VM.Group.Show'" [ngStyle]="VM.Group.Ctl.Style">{{DM.Group}}</label>
+</FieldSet>
+<button [ngStyle]="VM.Exit.Style" [disabled]="VM.Disabled" (click)="OnClick('Exit')" type="button">Exit</button>
+<button *ngIf="VM.Back.Show" [ngStyle]="VM.Back.Style" [disabled]="VM.Disabled || VM.Board.Disabled" (click)="OnClick('Back')" type="button">Back</button>
+<button *ngIf="VM.Board.Show" [ngStyle]="VM.Board.Style" [disabled]="VM.Disabled || VM.Board.Disabled" (click)="OnClick('Board')" type="button">Board</button>
+<button *ngIf="VM.Challenge.Show" [ngStyle]="VM.Challenge.Style" [disabled]="VM.Disabled || VM.Board.Disabled" (click)="OnClick('Challenge')" type="button">Challenge</button>
+<button *ngIf="VM.Game.Show" [ngStyle]="VM.Game.Style" [disabled]="VM.Disabled || VM.Board.Disabled" (click)="OnClick('Game')" type="button">Game</button>
+<button *ngIf="VM.Select.Show" [ngStyle]="VM.Select.Style" [disabled]="VM.Disabled || VM.Board.Disabled" (click)="OnClick('Select')" type="button">Select</button>

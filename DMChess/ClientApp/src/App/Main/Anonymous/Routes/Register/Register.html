@@ -1,0 +1,29 @@
+<img [ngStyle]="VM.IconL.Style" [src]="VM.IconL.Src" (click)="OnClick('IconLeft')" alt="">
+<img [ngStyle]="VM.IconR.Style" [src]="VM.IconR.Src" (click)="OnClick('IconRight')" alt="">
+<fieldleg [VMP]="VM" [VM]="VM.FieldLeg">
+
+</fieldleg>
+<div [ngSwitch]="VM.View">
+  <phone *ngSwitchCase="'Phone'"></phone>
+  <photo *ngSwitchCase="'Photo'"></photo>
+  <div *ngSwitchCase="'Registration'" [ngSwitch]="VM.Switch">
+
+    <labelctl [VMP]="VM" [VM]="VM.Email" (Child_Change)="OnChange($event)" (Child_Click)="OnClick($event)"></labelctl>
+    <labelctl [VMP]="VM" [VM]="VM.UserId" (Child_Change)="OnChange($event)" (Child_Click)="OnClick($event)"></labelctl>
+    <div [ngSwitch]="VM.Switch">
+      <div *ngSwitchCase="'Password'">
+        <labelctl [VMP]="VM" [VM]="VM.Password_Hide" (Child_Change)="OnChange($event)" (Child_Click)="OnClick($event)"></labelctl>
+        <button [ngStyle]="VM.Toggle_Show.Style" [disabled]="VM.Disabled" (click)="OnClick('Show')">Show</button>
+      </div>
+      <div *ngSwitchCase="'Text'">
+        <labelctl [VMP]="VM" [VM]="VM.Password_Show" (Child_Change)="OnChange($event)" (Child_Click)="OnClick($event)"></labelctl>
+        <button [ngStyle]="VM.Toggle_Hide.Style" [disabled]="VM.Disabled" (click)="OnClick('Show')">Hide</button>
+      </div>
+    </div>
+    <labelctl [VMP]="VM" [VM]="VM.CodeImg" (Child_Change)="OnChange($event)" (Child_Click)="OnClick($event)"></labelctl>
+    <labelctl [VMP]="VM" [VM]="VM.Code" (Child_Change)="OnChange($event)" (Child_Click)="OnClick($event)"></labelctl>
+
+    <button [ngStyle]="VM.Register.Style" [disabled]="VM.Disabled||VM.Register.Disabled" (click)="OnClick('Register')" type="button">Register</button>
+    <buttons [VMP]="VM" [VM]="VM.Buttons" (Click_Button)="OnClick($event)"></buttons>
+  </div>
+</div>

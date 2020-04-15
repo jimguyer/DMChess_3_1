@@ -1,0 +1,16 @@
+<FieldSet [ngStyle]="VM.FieldLeg.Fieldset.Style">
+  <legend [ngStyle]="VM.FieldLeg.Legend.Style">{{VM.FieldLeg.Legend.Value}}</legend>
+
+  <label [ngStyle]="VM.Email.Label.Style">Current</label>
+  <input [ngStyle]="VM.Email.Ctl.Style" [disabled]="VM.Disabled||VM.Input_Disabled" [(ngModel)]="VM.Email.Ctl.Value" (change)="OnChange('Email')" type="text" />
+
+  <label [ngStyle]="VM.NameFirst.Label.Style">First Name</label>
+  <input [ngStyle]="VM.NameFirst.Ctl.Style" [disabled]="VM.Disabled||VM.Input_Disabled" [(ngModel)]="VM.NameFirst.Ctl.Value" (change)="OnChange('NameFirst')" type="text" />
+
+  <label [ngStyle]="VM.NameLast.Label.Style">Last Name</label>
+  <input [ngStyle]="VM.NameLast.Ctl.Style" [disabled]="VM.Disabled||VM.Input_Disabled" [(ngModel)]="VM.NameLast.Ctl.Value" (change)="OnChange('NameLast')" type="text" />
+</FieldSet>
+<buttons [VMP]="VM" [VM]="VM.Buttons" (Click_Button)="OnClick($event)"></buttons>
+<!--<button [ngStyle]="VM.Exit.Style" [disabled]="VM.Disabled" (click)="OnClick('Exit')" type="button">Exit</button>
+<button [ngStyle]="VM.Back.Style" [disabled]="VM.Disabled" (click)="OnClick('Back')" type="button">Back</button>
+<button [ngStyle]="VM.Next.Style" [disabled]="VM.Disabled||VM.Next.Disabled" (click)="OnClick('Next')"type="button">Next</button>-->

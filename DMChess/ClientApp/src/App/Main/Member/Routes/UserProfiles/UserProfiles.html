@@ -1,0 +1,41 @@
+<tabs (TabClickIdx)="OnClick('Tab', $event)"></tabs>
+<div [ngSwitch]="VM.View">
+  <membership *ngSwitchCase="'Member'"></membership>
+  <photo *ngSwitchCase="'Photo'"></photo>
+  <div *ngSwitchCase="'UserProfile'" [ngSwitch]="VM.Show">
+    <img [ngStyle]="VM.Img.Style" [src]="VM.Img.Src" (click)="OnClick('Img')">
+    <div *ngSwitchCase="'Output'">
+      <label *ngIf="VM.UserId.Show" [ngStyle]="VM.UserId_Label.Style">User ID:</label>
+      <label *ngIf="VM.UserId.Show" [ngStyle]="VM.UserId.Style">{{DM.UserId}}</label>
+      <label *ngIf="VM.Name.Show" [ngStyle]="VM.Name_Label.Style">Name:</label>
+      <label *ngIf="VM.Name.Show" [ngStyle]="VM.Name.Style">{{DM.NameFirstLast}}</label>
+      <label *ngIf="VM.Group.Show" [ngStyle]="VM.Group_Label.Style">Group:</label>
+      <label *ngIf="VM.Group.Show" [ngStyle]="VM.Group.Style">{{DM.Group}}</label>
+      <label *ngIf="VM.Challenges.Show" [ngStyle]="VM.Challenges_Label.Style">Open Challenges:</label>
+      <label *ngIf="VM.Challenges.Show" [ngStyle]="VM.Challenges.Style">{{DM.Challenges}}</label>
+      <label *ngIf="VM.ActiveGames.Show" [ngStyle]="VM.ActiveGames_Label.Style">Active Games:</label>
+      <label *ngIf="VM.ActiveGames.Show" [ngStyle]="VM.ActiveGames.Style">{{DM.ActiveGames}}</label>
+      <label *ngIf="VM.Rating.Show" [ngStyle]="VM.Rating_Label.Style">Rating:</label>
+      <label *ngIf="VM.Rating.Show" [ngStyle]="VM.Rating.Style">{{DM.Rating}}</label>
+      <label *ngIf="VM.WinsLosses.Show" [ngStyle]="VM.WinsLosses_Label.Style">Wins/Losses:</label>
+      <label *ngIf="VM.WinsLosses.Show" [ngStyle]="VM.WinsLosses.Style">{{DM.WinsLosses}}</label>
+    </div>
+    <div *ngSwitchCase="'Input'">
+      <label [ngStyle]="VM.I_UserId_Label.Style">User ID</label>
+      <input [ngStyle]="VM.I_UserId.Style" [disabled]="VM.Disabled" [(ngModel)]="DM.I_UserId" (ngModelChange)="OnChange('UserId')" type="text" />
+      <label [ngStyle]="VM.I_NameFirst_Label.Style">First Name</label>
+      <input [ngStyle]="VM.I_NameFirst.Style" [disabled]="VM.Disabled" [(ngModel)]="DM.I_NameFirst" (ngModelChange)="OnChange('NameFirst')" type="text" />
+      <label [ngStyle]="VM.I_NameLast_Label.Style">Last Name</label>
+      <input [ngStyle]="VM.I_NameLast.Style" [disabled]="VM.Disabled" [(ngModel)]="DM.I_NameLast" (ngModelChange)="OnChange('NameLast')" type="text" />
+      <label [ngStyle]="VM.I_Group_Label.Style">Group</label>
+      <input [ngStyle]="VM.I_Group.Style" [disabled]="VM.Disabled" [(ngModel)]="DM.I_Group" (ngModelChange)="OnChange('Group')" type="text" />
+    </div>
+  </div>
+</div>
+
+<button *ngIf="VM.Exit.Show" [ngStyle]="VM.Exit.Style" [disabled]="VM.Exit.Disabled" (click)="OnClick('Exit')" type="button">Exit</button>
+<button *ngIf="VM.Cancel.Show" [ngStyle]="VM.Cancel.Style" [disabled]="VM.Disabled|| VM.Cancel.Disabled" (click)="OnClick('Cancel')" type="button">Cancel</button>
+<button *ngIf="VM.Default.Show" [ngStyle]="VM.Default.Style" [disabled]="VM.Disabled|| VM.Default.Disabled" (click)="OnClick('Default')" type="button">Default</button>
+<button *ngIf="VM.Edit.Show" [ngStyle]="VM.Edit.Style" [disabled]="VM.Disabled|| VM.Edit.Disabled" (click)="OnClick('Edit')" type="button">Edit</button>
+<button *ngIf="VM.Photo.Show" [ngStyle]="VM.Photo.Style" [disabled]="VM.Disabled|| VM.Photo.Disabled" (click)="OnClick('Photo')" type="button">Photo</button>
+<button *ngIf="VM.Save.Show" [ngStyle]="VM.Save.Style" [disabled]="VM.Disabled|| VM.Save.Disabled" (click)="OnClick('Save')" type="button">Save</button>

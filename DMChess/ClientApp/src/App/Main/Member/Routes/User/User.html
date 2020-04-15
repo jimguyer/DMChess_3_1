@@ -1,0 +1,55 @@
+<tabs (tabsEvent)="OnTabsEvent($event)"></tabs>
+<div [ngSwitch]="VM.View">
+  <membership *ngSwitchCase="'Membership'"></membership>
+  <phone *ngSwitchCase="'Phone'"></phone>
+  <div *ngSwitchCase="'Email'" [ngSwitch]="VM.Show">
+    <label [ngStyle]="VM.Email_Label.Style"> {{DM.Email_Label}}</label>
+    <label [ngStyle]="VM.Email.Style"> {{DM.Email}}</label>
+    <div *ngSwitchCase="'Entry'">
+      <label [ngStyle]="VM.I_Email_Label.Style">New</label>
+      <input [ngStyle]="VM.I_Email.Style" [disabled]="VM.Disabled||VM.Input_Disabled" [(ngModel)]="DM.I_Email" (change)="OnChange('I_Email')" type="text">
+      <button [ngStyle]="VM.Exit.Style" [disabled]="VM.Exit.Disabled" (click)="OnClick('Exit')" type="button">Exit</button>
+      <button *ngIf="VM.Save.Show" [ngStyle]="VM.Save.Style" [disabled]="VM.Disabled|| VM.Save.Disabled" (click)="OnClick('Save')" type="button">Save</button>
+    </div>
+    <div *ngSwitchCase="'Confirm'">
+      <label [ngStyle]="VM.Code_Label.Style">Code</label>
+      <input [ngStyle]="VM.Code.Style" [disabled]="VM.Disabled||VM.Input_Disabled" [(ngModel)]="DM.Code" (change)="OnChange('Code')" type="text">
+      <button [ngStyle]="VM.Exit.Style" [disabled]="VM.Exit.Disabled" (click)="OnClick('Exit')" type="button">Exit</button>
+      <button *ngIf="VM.Reenter.Show" [ngStyle]="VM.Reenter.Style" [disabled]="VM.Disabled|| VM.Resend.Disabled" (click)="OnClick('Reenter')" type="button">Reenter</button>
+      <button *ngIf="VM.Resend.Show" [ngStyle]="VM.Resend.Style" [disabled]="VM.Disabled|| VM.Resend.Disabled" (click)="OnClick('Resend')" type="button">Resend</button>
+      <button *ngIf="VM.Confirm.Show" [ngStyle]="VM.Confirm.Style" [disabled]="VM.Disabled|| VM.Confirm.Disabled" (click)="OnClick('Confirm')" type="button">Confirm</button>
+    </div>
+  </div>
+  <div *ngSwitchCase="'Options'">
+    <label [ngStyle]="VM.EmailAlerts_Label.Style">Email Alerts_Label</label>
+    <input [ngStyle]="VM.EmailAlerts.Style" [disabled]="VM.Disabled||VM.Input_Disabled" [(ngModel)]="DM.EmailAlerts" (change)="OnChange('EmailAlerts')" type="checkbox">
+
+    <label [ngStyle]="VM.PhoneAlerts_Label.Style">Phone Alerts</label>
+    <input [ngStyle]="VM.PhoneAlerts.Style" [disabled]="VM.Disabled||VM.Input_Disabled" [(ngModel)]="DM.PhoneAlerts" (change)="OnChange('PhoneAlerts')" type="checkbox">
+
+    <label [ngStyle]="VM.AudioOn_Label.Style">Audio On</label>
+    <input [ngStyle]="VM.AudioOn.Style" [disabled]="VM.Disabled||VM.Input_Disabled" [(ngModel)]="DM.AudioOn" (change)="OnChange('AudioOn')" type="checkbox">
+
+
+    <label [ngStyle]="VM.ClockShow_Label.Style">Clock Show</label>
+    <input [ngStyle]="VM.ClockShow.Style" [disabled]="VM.Disabled||VM.Input_Disabled" [(ngModel)]="DM.ClockShow" (change)="OnChange('ClockShow')" type="checkbox">
+
+    <label [ngStyle]="VM.PostToFacebook_Label.Style">Post To FaceBook</label>
+    <input [ngStyle]="VM.PostToFacebook.Style" [disabled]="VM.Disabled||VM.Input_Disabled" [(ngModel)]="DM.PostToFacebook" (change)="OnChange('PostToFacebook')" type="checkbox">
+
+    <button [ngStyle]="VM.Exit.Style" [disabled]="VM.Exit.Disabled" (click)="OnClick('Exit')" type="button">Exit</button>
+    <button *ngIf="VM.Save.Show" [ngStyle]="VM.Save.Style" [disabled]="VM.Disabled|| VM.Save.Disabled" (click)="OnClick('Save')" type="button">Save</button>
+  </div>
+  <div *ngSwitchCase="'Password'" [ngSwitch]="VM.Show">
+    <label [ngStyle]="VM.PasswordOld_Label.Style">Current</label>
+    <input *ngSwitchCase="'Password'" [ngStyle]="VM.PasswordOld.Style" [disabled]="VM.Disabled" [(ngModel)]="DM.PasswordOld" (change)="OnChange('PasswordOld')" type="password" />
+    <input *ngSwitchCase="'Text'" [ngStyle]="VM.PasswordOld.Style" [disabled]="VM.Disabled" [(ngModel)]="DM.PasswordOld" (change)="OnChange('PasswordOld')" type="text" />
+    <label [ngStyle]="VM.PasswordNew_Label.Style">New</label>
+    <input *ngSwitchCase="'Password'" [ngStyle]="VM.PasswordNew.Style" [disabled]="VM.Disabled" [(ngModel)]="DM.PasswordNew" (change)="OnChange('PasswordNew')" type="password" />
+    <input *ngSwitchCase="'Text'" [ngStyle]="VM.PasswordNew.Style" [disabled]="VM.Disabled" [(ngModel)]="DM.PasswordNew" (change)="OnChange('PasswordNew')" type="text" />
+
+    <button [ngStyle]="VM.Exit.Style" [disabled]="VM.Exit.Disabled" (click)="OnClick('Exit')" type="button">Exit</button>
+    <button [ngStyle]="VM.Toggle.Style" [disabled]="VM.Disabled" (click)="OnClick('Toggle')" type="button">{{DM.Toggle}}</button>
+    <button [ngStyle]="VM.Save.Style" [disabled]="VM.Disabled|| VM.Save.Disabled" (click)="OnClick('Save')" type="button">Save</button>
+  </div>
+</div>
